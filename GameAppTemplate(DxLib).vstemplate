@@ -1,0 +1,72 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>ゲーム アプリケーション(DxLib)</Name>
+    <Description>DXライブラリを使用したゲーム アプリケーションを作成するためのプロジェクトです。&#10;ゲームサイエンス学科１年で使用します。</Description>
+    <ProjectType>VC</ProjectType>
+    <LanguageTag>cpp</LanguageTag>
+    <PlatformTag>windows</PlatformTag>
+    <ProjectTypeTag>games</ProjectTypeTag>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Game</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>Trident.ico</Icon>
+  </TemplateData>
+  
+  
+  <TemplateContent>
+    <Project TargetFileName="GameAppTemplate(DxLib).vcxproj" File="GameAppTemplate(DxLib).vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">GameAppTemplate(DxLib).vcxproj.filters</ProjectItem>
+      
+      <!-- プリコンパイル済みヘッダー -->
+      <ProjectItem> pch.cpp </ProjectItem>
+      <ProjectItem> pch.h   </ProjectItem>
+      
+      <!-- メイン -->
+      <ProjectItem> WinMain.cpp </ProjectItem>
+      
+      <!-- ゲーム -->
+      <Folder Name="Game">
+        <ProjectItem> Game.cpp </ProjectItem>
+        <ProjectItem> Game.h   </ProjectItem>
+        <ProjectItem> Screen.h   </ProjectItem>
+      </Folder>
+      
+      <!-- ライブラリ -->
+      <Folder Name="Library">
+        <ProjectItem> DxLibExtension.cpp     </ProjectItem>
+        <ProjectItem> DxLibExtension.h       </ProjectItem>
+        <ProjectItem> GameLib.h              </ProjectItem>
+        <ProjectItem> GameLibAlgorithm.h     </ProjectItem>
+        <ProjectItem> GameLibErrorHandling.h </ProjectItem>
+        <ProjectItem> GameLibInput.cpp       </ProjectItem>
+        <ProjectItem> GameLibInput.h         </ProjectItem>
+        <ProjectItem> GameLibMath.h          </ProjectItem>
+        <ProjectItem> GameLibSystem.h        </ProjectItem>
+        <ProjectItem> GameLibTime.cpp        </ProjectItem>
+        <ProjectItem> GameLibTime.h          </ProjectItem>
+        <ProjectItem> MemoryLeakDetector.h   </ProjectItem>
+      </Folder>
+      
+      <!-- 埋め込みリソース -->
+      <Folder Name="EmbeddedResources">
+        <ProjectItem> Resource.h    </ProjectItem>
+        <ProjectItem> Resource.rc   </ProjectItem>
+        <ProjectItem> Icon\Game.ico </ProjectItem>
+      </Folder>
+      
+      <!-- リソース -->
+      <Folder Name="Resources">
+        <ProjectItem> Fonts\PongScore.dft    </ProjectItem>
+        <ProjectItem> Sounds\SE00.ogg   </ProjectItem>
+        <ProjectItem> Textures\TridentLogo.png </ProjectItem>
+      </Folder>
+      
+      <!-- プロパティシート -->
+      <ProjectItem> DxLib.props </ProjectItem>
+      
+    </Project>
+  </TemplateContent>
+</VSTemplate>
